@@ -1,6 +1,6 @@
-# Shadowman Reports Collection
+# The Reports Collection
 
-The Ansible Shadowman Reports collection includes a variety of Ansible content to help automate the creation of Linux, Windows and Networking reports.
+The Ansible Reports collection includes a variety of Ansible content to help automate the creation of Linux, Windows and Networking reports.
 
 <!--start requires_ansible-->
 ## Ansible version compatibility
@@ -27,10 +27,10 @@ This collection has been tested against RHEL 7 and 8, Windows Server 2016, IOS, 
 ### Modules
 Name | Description
 --- | ---
-[shadowman.reports.scan_packages](https://github.com/shadowman-lab/shadowman.reports/blob/main/docs/shadowman.reports.scan_packages_module.rst)|Scans for all packages on a Linux server
-[shadowman.reports.scan_services](https://github.com/shadowman-lab/shadowman.reports/blob/main/docs/shadowman.reports.scan_services_module.rst)|Scans for all services on a Linux server
-[shadowman.reports.win_scan_packages](https://github.com/shadowman-lab/shadowman.reports/blob/main/docs/shadowman.reports.win_scan_packages_module.rst)|Scans for all packages on a Windows server
-[shadowman.reports.win_scan_services](https://github.com/shadowman-lab/shadowman.reports/blob/main/docs/shadowman.reports.win_scan_services_module.rst)|Scans for all services on a Windows server
+[michaelford85.reports.scan_packages](https://github.com/shadowman-lab/shadowman.reports/blob/main/docs/shadowman.reports.scan_packages_module.rst)|Scans for all packages on a Linux server
+[michaelford85.reports.scan_services](https://github.com/shadowman-lab/shadowman.reports/blob/main/docs/shadowman.reports.scan_services_module.rst)|Scans for all services on a Linux server
+[michaelford85.reports.win_scan_packages](https://github.com/shadowman-lab/shadowman.reports/blob/main/docs/shadowman.reports.win_scan_packages_module.rst)|Scans for all packages on a Windows server
+[michaelford85.reports.win_scan_services](https://github.com/shadowman-lab/shadowman.reports/blob/main/docs/shadowman.reports.win_scan_services_module.rst)|Scans for all services on a Windows server
 
 <!--end collection content-->
 
@@ -38,14 +38,14 @@ Name | Description
 
 You can install the Shadowman Reports collection with the Ansible Galaxy CLI:
 
-    ansible-galaxy collection install shadowman.reports
+    ansible-galaxy collection install michaelford85.reports
 
 You can also include it in a `requirements.yml` file and install it with `ansible-galaxy collection install -r requirements.yml`, using the format:
 
 ```yaml
 ---
 collections:
-  - name: shadowman.reports
+  - name: michaelford85.reports
 ```
 ## Using this collection
 
