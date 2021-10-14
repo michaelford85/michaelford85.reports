@@ -1,8 +1,8 @@
-.. _shadowman.reports.scan_services:
+.. _michaelford85.reports.scan_services:
 
 
 ******************
-shadowman.reports.scan_services
+michaelford85.reports.scan_services
 ******************
 
 **Linux Scan Services module**
@@ -41,7 +41,7 @@ Examples
     tasks:
 
     - name: Scan services (Unix/Linux)
-      shadowman.reports.scan_services:
+      michaelford85.reports.scan_services:
         
 
 Return Values

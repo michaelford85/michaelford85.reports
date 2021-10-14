@@ -1,11 +1,11 @@
-.. _shadowman.reports.scan_packages:
+.. _michaelford85.reports.win_scan_packages:
 
 
 ******************
-shadowman.reports.scan_packages
+michaelford85.reports.win_scan_packages
 ******************
 
-**Linux Scan Packages module**
+**Windows Scan Packages module**
 
 
 Version added: 1.0.0
@@ -17,47 +17,19 @@ Version added: 1.0.0
 
 Synopsis
 --------
-- This module scans packages on Linux hosts.
-
-
+- This module scans packages on Windows hosts.
 
 
 Parameters
 ----------
-
-.. raw:: html
-
-    <table  border=0 cellpadding=0 class="documentation-table">
-        <tr>
-            <th colspan="7">Parameter</th>
-            <th>Choices/<font color="blue">Defaults</font></th>
-            <th width="100%">Comments</th>
-        </tr>
-            
-            <tr>
-                <td colspan="7">
-                    <div class="ansibleOptionAnchor" id="parameter-"></div>
-                    <b>os_family</b>
-                    <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                    </div>
-                </td>
-                <td>
-                </td>
-                <td>
-                        <div>The Linux OS family to determine what package management system to use. Best to use ansible facts to gather and provide to the module.</div>
-                </td>
-            </tr>
-    </table>
-    <br/>
+- None
 
 
 Notes
 -----
 
 .. note::
-   - Tested against RHEL 7 and 8
+   - Tested against Windows Server 2016
    
 
 Examples
@@ -68,9 +40,8 @@ Examples
     
     tasks:
 
-    - name: Scan packages (Unix/Linux)
-      scan_packages:
-        shadowman.reports.os_family: '{{ ansible_os_family }}'
+    - name: Scan Packages
+      michaelford85.reports.win_scan_packages:
         
 
 Return Values
@@ -96,7 +67,7 @@ Common return values are documented `here <https://docs.ansible.com/ansible/late
                 </td>
                 <td>always</td>
                 <td>
-                            <div>A list of packages, including the source, name, and version, release, and arch.</div>
+                            <div>A list of packages, including the name, version, publisher and arch.</div>
                     <br/>
                         <div style="font-size: smaller"><b>Sample:</b></div>
                         <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">The configuration returned will always be in the same format of the parameters above.</div>

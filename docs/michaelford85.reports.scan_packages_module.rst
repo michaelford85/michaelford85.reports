@@ -1,11 +1,11 @@
-.. _shadowman.reports.win_scan_services:
+.. _michaelford85.reports.scan_packages:
 
 
 ******************
-shadowman.reports.win_scan_services
+michaelford85.reports.scan_packages
 ******************
 
-**Windows Scan Services module**
+**Linux Scan Packages module**
 
 
 Version added: 1.0.0
@@ -17,19 +17,47 @@ Version added: 1.0.0
 
 Synopsis
 --------
-- This module scans services on Windows hosts.
+- This module scans packages on Linux hosts.
+
+
 
 
 Parameters
 ----------
-- None
+
+.. raw:: html
+
+    <table  border=0 cellpadding=0 class="documentation-table">
+        <tr>
+            <th colspan="7">Parameter</th>
+            <th>Choices/<font color="blue">Defaults</font></th>
+            <th width="100%">Comments</th>
+        </tr>
+            
+            <tr>
+                <td colspan="7">
+                    <div class="ansibleOptionAnchor" id="parameter-"></div>
+                    <b>os_family</b>
+                    <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                    </div>
+                </td>
+                <td>
+                </td>
+                <td>
+                        <div>The Linux OS family to determine what package management system to use. Best to use ansible facts to gather and provide to the module.</div>
+                </td>
+            </tr>
+    </table>
+    <br/>
 
 
 Notes
 -----
 
 .. note::
-   - Tested against Windows Server 2016
+   - Tested against RHEL 7 and 8
    
 
 Examples
@@ -40,8 +68,9 @@ Examples
     
     tasks:
 
-    - name: Scan Services
-      shadowman.reports.win_scan_services:
+    - name: Scan packages (Unix/Linux)
+      scan_packages:
+        michaelford85.reports.os_family: '{{ ansible_os_family }}'
         
 
 Return Values
@@ -59,7 +88,7 @@ Common return values are documented `here <https://docs.ansible.com/ansible/late
             <tr>
                 <td colspan="1">
                     <div class="ansibleOptionAnchor" id="return-"></div>
-                    <b>services</b>
+                    <b>packages</b>
                     <a class="ansibleOptionLink" href="#return-" title="Permalink to this return value"></a>
                     <div style="font-size: small">
                       <span style="color: purple">list</span>
@@ -67,7 +96,7 @@ Common return values are documented `here <https://docs.ansible.com/ansible/late
                 </td>
                 <td>always</td>
                 <td>
-                            <div>A list of packages, including the name, Windows Service Name, and state.</div>
+                            <div>A list of packages, including the source, name, and version, release, and arch.</div>
                     <br/>
                         <div style="font-size: smaller"><b>Sample:</b></div>
                         <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">The configuration returned will always be in the same format of the parameters above.</div>
